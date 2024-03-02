@@ -12,7 +12,7 @@ require '/app/vendor/autoload.php';
  */
 function main(): void
 {
-    $pullRequestId = getenv('INPUT_PR-NUMBER')
+    $pullRequestId = getenv('INPUT_PR-NUMBER');
     $repoFullName = getenv('GITHUB_REPOSITORY') ?: '';
 
     if (hasLabel($pullRequestId, $repoFullName, getenv('INPUT_GITHUB-TOKEN'), 'ai-describe')) {
